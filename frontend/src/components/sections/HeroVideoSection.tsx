@@ -134,11 +134,17 @@ export default function HeroVideoSection() {
           className="absolute inset-0 w-full h-full object-cover z-0"
           src="/images/hero-video.mp4"
           muted
+          autoPlay
           playsInline
           preload="auto"
-          // No autoPlay — we control currentTime via scroll
           aria-hidden="true"
-          onLoadedMetadata={() => setVideoReady(true)}
+          onLoadedMetadata={() => {
+            setVideoReady(true);
+            if (videoRef.current) {
+              videoRef.current.pause();
+              videoRef.current.currentTime = 0;
+            }
+          }}
           onError={() => setVideoError(true)}
         />
 
