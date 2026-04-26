@@ -116,7 +116,7 @@ export default function HeroVideoSection() {
     <div
       ref={wrapperRef}
       className="relative w-full"
-      style={{ height: '500vh' }}
+      style={{ height: '100vh' }}
       aria-label="Hero"
     >
       {/**
