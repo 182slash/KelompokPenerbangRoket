@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/index';
 import { formatEventDateShort, formatIDR } from '@/lib/utils';
 import { staggerContainer, staggerItem, fadeInUp, letterReveal } from '@/lib/motion';
-import HeroVideoSection from '@/components/sections/HeroVideoSection';
+import BackgroundHero from '@/components/sections/BackgroundHero';
 
 const BAND_NAME_LINE1 = 'KELOMPOK';
 const BAND_NAME_LINE2 = 'PENERBANG';
