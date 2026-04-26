@@ -53,7 +53,7 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <HeroVideoSection />
+      <BackgroundHero />
 
       {/* ─── LATEST RELEASE ─── */}
       {latestAlbum && (
