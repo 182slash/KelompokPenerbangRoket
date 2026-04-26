@@ -57,13 +57,6 @@ export default function HeroVideoSection() {
     const wrapper = wrapperRef.current;
     if (!video || !wrapper) return;
 
-    // ── Video event handlers ──────────────────────────────────────────────────
-    const onLoadedMetadata = () => setVideoReady(true);
-    const onError = () => setVideoError(true);
-
-    video.addEventListener('loadedmetadata', onLoadedMetadata);
-    video.addEventListener('error', onError);
-
     // ── Scroll handler ────────────────────────────────────────────────────────
     const handleScroll = () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -111,8 +104,6 @@ export default function HeroVideoSection() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      video.removeEventListener('loadedmetadata', onLoadedMetadata);
-      video.removeEventListener('error', onError);
     };
   }, [videoReady]);
 
@@ -153,7 +144,7 @@ export default function HeroVideoSection() {
 
         {/* ── Fallback gradient background (shown while video loads or on error) ── */}
         <div
-          className="absolute inset-0 z-[1] transition-opacity duration-700"
+          className="absolute inset-0 z-[1] transition-opacity duration-700 pointer-events-none"
           style={{ opacity: videoReady && !videoError ? 0 : 1 }}
           aria-hidden="true"
         >
