@@ -64,7 +64,7 @@ export default function HeroVideoSection() {
       rafRef.current = requestAnimationFrame(() => {
         const video = videoRef.current;
         const wrapper = wrapperRef.current;
-        if (!video || !wrapper || !videoReady) return;
+        if (!video || !wrapper) return;
 
         const wrapperRect = wrapper.getBoundingClientRect();
         const wrapperTop = wrapper.offsetTop;
